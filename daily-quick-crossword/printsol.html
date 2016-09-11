@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Daily Quick Crossword</title>
+<script type="text/javascript" src="cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&top=1&showPolicyLink=1"></script></head>
+</head>
+<body bgcolor="White" text="Black">
+<center>
+<table width="640" border="0" cellspacing="0" cellpadding="3">
+<tr><td align="center">
+	<a href="/index.html">
+	<img src="../header.png" alt="Simply Daily Puzzles" name="Puzzles" id="Puzzles" width="714" height="38" border="0">
+	</a>
+</td></tr>
+<tr><td align="center" valign="top">
+<h2>Daily Quick Crossword Solution</h2>
+<br />
+<script language="JavaScript" type="text/javascript">
+puzz = getURLParam("puzz"); 
+ddd = puzz.substr(12,2);
+mmm = puzz.substr(9,2);
+year = puzz.substr(4,4);
+puzzdir = year + "-" + mmm + "/";
+if (ddd<10) {ddd=puzz.substr(13,1);}
+if (mmm<10) {mmm=puzz.substr(10,1);}
+
+switch (mmm) {
+    case "1":
+      month = "January";
+      break;
+    case "2":
+      month = "February";
+      break;
+    case "3":
+      month = "March";
+      break;
+    case "4":
+      month = "April";
+      break;
+    case "5":
+      month = "May";
+      break;
+    case "6":
+      month = "June";
+      break;
+    case "7":
+      month = "July";
+      break;
+    case "8":
+      month = "August";
+      break;
+    case "9":
+      month = "September";
+      break;
+    case "10":
+      month = "October";
+      break;
+    case "11":
+      month = "November";
+      break;
+    case "12":
+      month = "December";
+      break;
+  } 
+document.write ("<strong>" + ddd + " " + month + " " + year + "</strong><br /><br />"); 
+document.write ('<img src="puzzles/' + puzzdir + puzz + '_sol.png" alt="crossword puzzle solution" border="0" /><br /><br />');
+</script>
+</td></tr>
+</table>
+<br /><br />
+<table width="640" border="0" cellspacing="0" cellpadding="3" class="td2">
+<tr><td align="center" valign="top">
+<div id="foot">
+	Copyright &copy; 2018 Simply Daily Puzzles
+</div>
+</td></tr></table>
+</center></body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Daily Quick Crossword - solve it online or print it out</title>
+<meta name="description" content="A free daily quick crossword that's not too difficult - just right for solving in your coffee break." />
+<meta name="keywords" content="quick crossword,daily,quick,crossword,free,puzzle,coffee break" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="content-language" content="en-us" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="/simply.css" type="text/css" />
+<script type="text/javascript" src="timer.js"></script>
+<script type="text/javascript" src="cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&top=1&showPolicyLink=1"></script></head>
+<body>
+
+<div class="container" style="background-color: White;">
+
+<div class="row">
+<div class="col-md-12" style="padding-left: 20px; padding-right: 20px; padding-top: 10px;">
+<img src="/header.png" id="Puzzles" name="Puzzles" alt="Simply Daily Puzzles" style="max-width:1080px; width: 100%; height: auto; left:auto; right:auto;" /></a>
+<br /><br />
+
+<!-- ads -->
+<br />
+
+</div></div>
+
+<div class="col-md-8" style="padding-left: 20px; padding-right: 20px;">
+
+<h1>Daily Quick Crossword</h1>
+
+<script type="text/javascript" src="daily-quick-crossword-1.js"></script>
+
+<p>A free daily online crossword that's not too difficult - just right for solving in your coffee break.</p>
+<p>Solve it online, or use the printable version if you prefer to solve the traditional way with pencil and paper.</p>
+<p>Use the timer if you want to check your solving speed.</p>
+<p>For full instructions on playing the Daily Quick Crossword, see <a href="how-to-play.html">How to Play</a>.</p>
+<p>Enjoy!</p>
+<br /><br />
+
+<form name="timer" action="null">
+<div id="move1" class="drag">
+
+	<table border="0" cellspacing="0" cellpadding="5" bgcolor="#ffffff" class="table">
+	<tr><td valign="middle">
+	<b>Timer</b>
+	</td><td valign="middle">
+	<input type="text" readonly name="d2" size="7" />
+	</td><td valign="middle">
+	<input type="radio" name="S" value="1" onclick="cstart()" />&nbsp;Start&nbsp;&nbsp;&nbsp;<br />
+	</td><td  valign="middle">
+	<input type="radio" name="S" value="2" onclick="cstop()" />&nbsp;Stop&nbsp;&nbsp;&nbsp;<br />
+	</td><td  valign="middle">
+	<input type="radio" name="S" value="3" onclick="creset()" />&nbsp;Reset&nbsp;&nbsp;&nbsp;
+	</td></tr></table>
+</div>
+</form>
+<br />
+<br />
+
+<script type="text/javascript" src="raphael.js"></script>
+<script type="text/javascript" src="crosswordCompiler.js"></script>
+<script type="text/javascript">
+var url="puzzles/" + puzzdir + puzz  + ".js";
+$.ajaxSetup({async:false});
+$.getScript(url);
+$.ajaxSetup({async:true});
+$(function(){ $("#CrosswordCompilerPuz").CrosswordCompiler(CrosswordPuzzleData,null,    {SUBMITMETHOD:"POST",PROGRESS :  "" , ROOTIMAGES: "CrosswordCompilerApp/CrosswordImages/"  } );});</script>
+<div style="text-align:center"><div id="CrosswordCompilerPuz" style="text-align:center"></div></div>
+<br /><br />
+
+<p><a href="how-to-play.html">How to Play</a></p>
+<script type="text/javascript">
+document.write ("<p><a href='puzzles/" + puzzdir + puzz + ".html'>Printable Puzzle</a></p>");
+</script>
+<script type="text/javascript">
+document.write ("<p><a href='printsol.html?puzz=" + puzz + "'>Printable Solution</a></p>");
+</script>
+<p><a href="archive.html">Previous Quick Crosswords</a></p>
+
+
+<br /><br />
+<!-- ads -->
+
+</div>
+<div class="col-md-4" style="padding-left: 20px; padding-right: 20px; padding-top: 10px;">
+		<div id="cssmenu">
+		<ul>
+		    <li class="active"><a href="/index.html"><span>Home</span></a></li>
+			<li class="active"><a href="/daily-crossword/"><span>American Crossword</span></a></li>
+			<li class="active"><a href="/daily-quick-crossword/"><span>Quick Crossword</span></a></li>
+			<li class="active"><a href="/daily-cryptic/"><span>Easy Cryptic Crossword</span></a></li>
+			<li class="active"><a href="/daily-codeword/"><span>Codeword</span></a></li>
+		    <li class="active"><a href="/daily-word-search/"><span>Word Search</span></a></li>
+		    <li class="active"><a href="/daily-sudoku/"><span>Sudoku</span></a></li>
+		    <li class="active"><a href="/daily-chess-puzzles/"><span>Chess Puzzles</span></a></li>
+		    <li class="active"><a href="/about/"><span>About</span></a></li>
+		</ul>
+		</div>
+<br /><br />
+<!-- ads -->
+<br/><br/>
+</div></div></div>
+</body></html>
+

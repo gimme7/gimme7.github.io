@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Daily Quick Crossword Archive</title>
+<meta name="description" content="Free daily online crosswords to solve in your browser or to print" />
+<meta name="keywords" content="daily,crosswords,cryptic,free,puzzles" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="content-language" content="en-us" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="/simply.css" type="text/css" />
+
+<script type="text/javascript">
+var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+function calendar(minus) {
+date = new Date();
+day = date.getDate();
+month = date.getMonth();
+year = date.getFullYear();
+month = month-minus;
+if(month < 0)
+{
+	year = year-1;	
+	month = month + 12;
+}
+mmm = month+1;
+mmm = "" + mmm;
+if (mmm<10) {mmm="0"+mmm};
+this_month = new Date(year, month, 1);
+next_month = new Date(year, month + 1, 1);
+
+//Find out when this month starts and ends.         
+first_week_day = this_month.getDay();
+days_in_this_month = Math.round((next_month.getTime() - this_month.getTime()) / (1000 * 60 * 60 * 24));
+
+calendar_html = '<table cellpadding=5 class="table">';
+
+calendar_html += '<tr><td colspan="7" align="center" style="background-color:#cccccc; color:#000000;">' + 
+                months[month] + ' ' + year + '</td></tr>';
+
+calendar_html += '<tr><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>';
+calendar_html += '<tr>';
+
+//Fill the first week of the month with the appropriate number of blanks.       
+for(week_day = 0; week_day < first_week_day; week_day++)
+    {
+    calendar_html += '<td> </td>';   
+    }
+week_day = first_week_day;
+for(day_counter = 1; day_counter <= days_in_this_month; day_counter++) {
+	ddd = "" + day_counter;
+	if (day_counter<10) {ddd="0"+day_counter};
+	puzz = "dq1-" + year + "-" + mmm + "-" + ddd;
+    week_day %= 7;
+    if(week_day == 0)
+       calendar_html += '</tr><tr>';
+    if ((day < day_counter) && (minus==0)) {  
+       calendar_html += '<td align="center"><font size="-1">' + day_counter + '</font></td>';
+	}
+    else
+       calendar_html += '<td align="center"> ' + 
+                        '<a href="index.html?puzz=' + puzz + '">' + day_counter + '</a></td>';
+	week_day++;
+ } 
+ calendar_html += '</tr>';
+ calendar_html += '</table>';     
+ document.write(calendar_html);                  
+ }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?tracking=1&thirdparty=1&always=1&top=1&showPolicyLink=1"></script></head>
+</head>
+<body>
+
+<div class="container" style="background-color: White;">
+
+<div class="row">
+<div class="col-md-12" style="padding-left: 20px; padding-right: 20px; padding-top: 10px;">
+<img src="/header.png" id="Puzzles" name="Puzzles" alt="Simply Daily Puzzles" style="max-width:1080px; width: 100%; height: auto; left:auto; right:auto;" /></a>
+<br /><br />
+
+<!-- ads -->
+<br />
+
+</div></div>
+
+<div class="col-md-8" style="padding-left: 20px; padding-right: 20px;">
+
+
+<h1>Daily Quick Crossword Archive</h1>
+<p>Click on a date to get a daily crossword from the archive.</p>
+<center>
+<table cellpadding="10" class="table">
+<tr><td valign="top"><script type="text/javascript">calendar(3);</script></td></tr>
+<tr><td valign="top"><script type="text/javascript">calendar(2);</script></td></tr>
+<tr><td valign="top"><script type="text/javascript">calendar(1);</script></td></tr>
+<tr><td valign="top"><script type="text/javascript">calendar(0);</script></td></tr>
+</table>
+</center><br />
+
+
+<br /><br />
+<!-- ads -->
+
+</div>
+<div class="col-md-4" style="padding-left: 20px; padding-right: 20px; padding-top: 10px;">
+		<div id="cssmenu">
+		<ul>
+		    <li class="active"><a href="/index.html"><span>Home</span></a></li>
+			<li class="active"><a href="/daily-crossword/"><span>American Crossword</span></a></li>
+			<li class="active"><a href="/daily-quick-crossword/"><span>Quick Crossword</span></a></li>
+			<li class="active"><a href="/daily-cryptic/"><span>Easy Cryptic Crossword</span></a></li>
+			<li class="active"><a href="/daily-codeword/"><span>Codeword</span></a></li>
+		    <li class="active"><a href="/daily-word-search/"><span>Word Search</span></a></li>
+		    <li class="active"><a href="/daily-sudoku/"><span>Sudoku</span></a></li>
+		    <li class="active"><a href="/daily-chess-puzzles/"><span>Chess Puzzles</span></a></li>
+		    <li class="active"><a href="/about/"><span>About</span></a></li>
+		</ul>
+		</div>
+<br /><br />
+<!-- ads -->
+<br/><br/>
+</div></div></div>
+</body></html>
